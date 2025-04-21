@@ -50,12 +50,21 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        background-color: lightblue;
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
+      }
+      .bar-text{
+        color: white;
+      }
+      .bar{
+        border: solid 1px darkblue;
+        height: 100px;
+        width: 1300px;
+        background-color: darkblue;
       }
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
@@ -67,8 +76,14 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+    <div class="bar">
+      <div class="bar-text">
+        <p>About Research Presentations&Publications Professional Development Contact</p>
+      </div>
+    </div>
+  <!-- <h3><span>${this.t.title}:</span> ${this.title}</h3>
   <slot></slot>
+  -->
 </div>`;
   }
 
