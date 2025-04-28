@@ -5,6 +5,8 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import '@haxtheweb/scroll-button/scroll-button.js';
+import './portfolio-bar.js';
 
 /**
  * `portfolio-very-theme`
@@ -20,6 +22,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
+    this.pages = [];
     this.title = "";
     this.t = this.t || {};
     this.t = {
@@ -40,6 +43,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      pages: { type: Array },
     };
   }
 
@@ -48,14 +52,24 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: block;
+        height: 100vh;
         color: var(--ddd-theme-primary);
         background-color: lightblue;
         font-family: var(--ddd-font-navigation);
+        
+      }
+      portfolio-bar{
+        display: block;
+        flex-wrap: wrap;
+        width: 310px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        color: white;
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        margin-left: 310px;
       }
       .bar-text{
         color: white;
@@ -75,16 +89,31 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-    <div class="bar">
-      <div class="bar-text">
-        <p>About Research Presentations&Publications Professional Development Contact</p>
-      </div>
-    </div>
-  <!-- <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
-  -->
+    <portfolio-bar>
+      <p>
+        ${this.pages.map((page, index) => html` <p><a href="#${page.number}" @click="${this.linkChange}" data-index
+        = "${index}">${page.title}</a></p>`)}
+      </p>
+    </portfolio-bar>
+  <div class="wrapper" @page-added="${this.addPage}">
+    <slot></slot>
 </div>`;
+  }
+
+  linkChange(e) {
+    let number = parseInt(e.target.getAttribute("data-index"));
+    if (number >= 0) {
+      this.pages[number].element.scrollIntoView();
+    }
+  }
+  addPage(e){
+    const element = e.detail.value
+    const page = {
+      number: element.pageNumber,
+      title: element.title,
+      element: element,
+    }
+    this.pages = [...this.pages, page];
   }
 
   /**
