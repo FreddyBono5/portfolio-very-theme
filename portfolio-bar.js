@@ -48,17 +48,27 @@ export class PortfolioBar extends DDDSuper(I18NMixin(LitElement)) {
         background-color: lightblue;
         font-family: var(--ddd-font-navigation);
       }
-      .wrapper {
-        width: 300px;
-        height: 100vh;
-        overflow-x: hidden;
-        display: block;
-        text-align: center;
-        border-right: 10px solid black;
-      }
+      
       
       .links{
-        margin: auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-color: var(--ddd-theme-primary);
+       position: fixed;
+       top: var(--ddd-spacing-25);
+       left: var(--ddd-spacing-0);
+       height: 100px;
+       right: var(--ddd-spacing-0);
+       z-index: 1;
+      }
+      .links a {
+        padding: var(--ddd-spacing-3);
+        display: inline-block;
+        margin: var(--ddd-spacing-3);
+        background-color: var(--ddd-theme-primary);
+        color: var(--ddd-theme-secondary);
+        text-decoration: none;
       }
 
       h3 span {
@@ -72,8 +82,14 @@ export class PortfolioBar extends DDDSuper(I18NMixin(LitElement)) {
     return html`
 <div class="wrapper">
     <div class="links">
-        <slot></slot>
+      <a href="#1">About</a>
+      <a href="#2">Resume</a>
+      <a href="#3">Projects</a>
+      <a href="#4">Interests</a>
+      <a href="#5">Contact</a>
+
     </div>
+    <slot></slot>
 </div>`;
   }
 

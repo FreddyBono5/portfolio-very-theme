@@ -7,21 +7,19 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
- * `portfolio-screen`
+ * `portfolio-very-scroll`
  * 
  * @demo index.html
- * @element portfolio-screen
+ * @element portfolio-very-scroll
  */
-export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioVeryScroll extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "portfolio-screen";
+    return "portfolio-very-scroll";
   }
 
   constructor() {
     super();
-    this.pageNumber = null;
-    this.pageName = "";
     this.title = "";
     this.t = this.t || {};
     this.t = {
@@ -35,8 +33,6 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
-      pageName: { type: String },
-      pageNumber: { type: Number },
     };
   }
 
@@ -53,7 +49,6 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
-        padding-top: var(--ddd-spacing-2);
       }
       h3 span {
         font-size: var(--portfolio-screen-label-font-size, var(--ddd-font-size-s));
@@ -90,4 +85,4 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
+globalThis.customElements.define(PortfolioVeryScroll.tag, PortfolioVeryScroll);
