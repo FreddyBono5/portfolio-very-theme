@@ -45,7 +45,7 @@ export class PortfolioBar extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: lightblue;
+        background-color: var(--ddd-theme-default-accent);
         font-family: var(--ddd-font-navigation);
       }
       

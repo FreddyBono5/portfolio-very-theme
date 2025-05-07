@@ -46,28 +46,31 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        background-color: lightblue;
+        background-color: var(--ddd-theme-default-accent);
         padding: var(--ddd-spacing-5);
         overflow: hidden;
       }
      :host(.about){
-      background-color: lightblue;
+      background-color: var(--ddd-theme-default-accent);
       height: 100vh;
      }
+
+    
      :host(.resume){
-      background-color: cadetblue;
+      background-color: var(--ddd-theme-default-creekTeal);
       height: 100vh;
      }
      :host(.projects){
-      background-color: lightblue;
+      background-color: var(--ddd-theme-default-nittanyNavy);
       height: 100vh;
      }
      :host(.interests){
-      background-color: cadetblue;
+      background-color: var(--ddd-theme-default-alertNonEmergency);
       height: 100vh;
      }
      :host(.contact){
-      height: 100vh;    
+      height: 100vh;  
+      background-color: var(--ddd-theme-default-limestoneGray);  
     }
      
 

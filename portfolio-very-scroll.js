@@ -43,7 +43,7 @@ export class PortfolioVeryScroll extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        background-color: lightblue;
+        background-color: var(--ddd-theme-default-accent);
         padding: var(--ddd-spacing-5);
         overflow: hidden;
       }

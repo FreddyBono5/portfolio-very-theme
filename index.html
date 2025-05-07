@@ -49,6 +49,12 @@
       padding: 100px;
 
     }
+    @media (max-width: 725px) {
+      .about-info, .resume-info, .interests-info, .contact-info, .projects-info{
+        display: flex;
+        flex-direction: column;
+      }
+    }
     .about-info{
       display: inline-flex;
       flex-direction: row;
@@ -123,10 +129,12 @@
     </div>
   </portfolio-screen>
   <portfolio-screen class="projects" id="3" title="Projects">
-    <portfolio-card title="Card List" description="The card list project recreated the campus cards from the Penn State Campuses
-    website. Each card contained a picture, a header, and a description about each campus. Each card also had a button labled
-    explore that once clicked on, would take you to that website for that campus." link = "https://ddd-card-list-rose.vercel.app/" 
-    image="dddimage.png"></portfolio-card>
+    <div class="projects-info">
+      <portfolio-card title="Card List" description="The card list project recreated the campus cards from the Penn State Campuses
+      website. Each card contained a picture, a header, and a description about each campus. Each card also had a button labled
+      explore that once clicked on, would take you to that website for that campus." link = "https://ddd-card-list-rose.vercel.app/" 
+      image="dddimage.png"></portfolio-card>
+    </div>
   </portfolio-screen>
 
   <portfolio-screen class="interests" id="4" title="Interests">

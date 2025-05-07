@@ -81,19 +81,16 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-0);
         padding: var(--ddd-spacing-0);
         color: var(--ddd-theme-primary);
-        background-color: lightblue;
+        background-color: var(--ddd-theme-default-accent);
         font-family: var(--ddd-font-navigation);
         
       }
      
-      .bar-text{
-        color: white;
-      }
+      
       .bar{
-        border: solid 1px darkblue;
         height: 100px;
         width: 1300px;
-        background-color: darkblue;
+        background-color: var(--ddd-theme-default-nittanyNavy);
       }
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
