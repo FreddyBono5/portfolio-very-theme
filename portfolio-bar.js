@@ -56,7 +56,6 @@ export class PortfolioBar extends DDDSuper(I18NMixin(LitElement)) {
        align-items: center;
        background-color: var(--ddd-theme-primary);
        position: fixed;
-       top: var(--ddd-spacing-25);
        left: var(--ddd-spacing-0);
        height: 100px;
        right: var(--ddd-spacing-0);

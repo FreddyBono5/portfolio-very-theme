@@ -12,17 +12,19 @@
       margin: 0;
       padding: 0;
     }
+
+    .projects{
+    }
+
+
+
     body{
       background-color: lightblue;
     }
     #demo {
       margin: var(--ddd-spacing-2);
     }
-    portfolio-very-theme {
-      margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
-    }
+   
     portfolio-very-theme:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
@@ -31,6 +33,62 @@
       background-color: var(--ddd-accent-2);
       color: var(--ddd-primary-17);
     }
+    :host(.about){
+        background-color: yellow;
+      }
+    .about-image img{
+      width: 440px;
+      border-radius: var(--ddd-radius-lg);
+      border: 20px solid cadetblue;
+    }
+
+    .about-text{
+      align-self: center;
+      font-size: 30px;
+      font-family: "sans-serif";
+      padding: 100px;
+
+    }
+    .about-info{
+      display: inline-flex;
+      flex-direction: row;
+    }
+    .resume-info{
+      display: inline-flex;
+      flex-direction: row;
+    }
+    .resume-text{
+      align-self: center;
+      font-size: 30px;
+      font-family: "sans-serif";
+      padding: 100px;
+      margin-bottom: 60px;
+    }
+    .interests-info{
+      display: inline-flex;
+      flex-direction: row;
+    }
+    .interests-images img{
+      width: 440px;
+      border-radius: var(--ddd-radius-lg);
+      border: 20px solid lightblue;
+    }
+    .interests-text{
+      align-self: center;
+      font-size: 30px;
+      font-family: "sans-serif";
+      padding: 100px;
+      margin-bottom: 300px;
+    }
+    .contact-info{
+      align-self: center;
+      text-align: center;
+      font-size: 40px;
+      font-family: "sans-serif";
+      padding: 100px;
+      margin-bottom: 100px;
+    }
+
   </style>
   <title>portfolio-very-theme</title>
 </head>
@@ -39,10 +97,66 @@
   <div>
     <portfolio-bar></portfolio-bar>
   </div>
-  
+  <portfolio-very-theme>
+    <portfolio-very-scroll></portfolio-very-scroll>
+  <portfolio-screen class="about" id="1" title="About">
+    <div class="about-info">
+      <div class = "about-image">
+        <img src="IMG_3007.JPEG" alt="Profile Picture">
+      </div>
+      <div class="about-text">
+        <p>Hello, my name is Freddy Bono. I am currently a sophomore at Penn State University with a major of cybersecurity. I am from
+            Downingtown, Pennsylvania. In my free time, I love to hang out with my friends, be outside, go to the gym, watch and play
+            sports, and watch movies.
+        </p>
+      </div>
+    </div>
+  </portfolio-screen>
+  <portfolio-screen class="resume" id="2" title="Resume">
+    <div class="resume-info">
+      <div class="resume-image">
+        <img src="ResumeBono.jpg" alt="Resume">
+      </div>
+      <div class="resume-text">
+        <p>Here is my resume!</p>
+      </div>
+    </div>
+  </portfolio-screen>
+  <portfolio-screen class="projects" id="3" title="Projects">
+    <portfolio-card title="Card List" description="The card list project recreated the campus cards from the Penn State Campuses
+    website. Each card contained a picture, a header, and a description about each campus. Each card also had a button labled
+    explore that once clicked on, would take you to that website for that campus." link = "https://ddd-card-list-rose.vercel.app/" 
+    image="dddimage.png"></portfolio-card>
+  </portfolio-screen>
+
+  <portfolio-screen class="interests" id="4" title="Interests">
+    <div class="interests-info">
+      <div class="interests-images">
+        <img src="https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w1024/mlb/m3ayigsjr3qcjiw2hhjm">
+        <img src="https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_
+        FMjpg_UX1000_.jpg">
+      </div>
+      <div class="interests-text">
+        <p>My interests include watching and playing sports, watching movies, being outside, going to the gym, and hanging out with my
+          friends. My favortie sport is football and my favorite movie is Interstellar.
+        </p>
+      </div>
+    </div>
+  </portfolio-screen>
+
+  <portfolio-screen class="contact" id="5" title="Contact">
+    <div class="contact-info">
+      <p>My contact information is: <br> Phone Number: 484-343-4322 <br> Email: flb5082@psu.edu</p>
+    </div>
+</portfolio-very-theme>
+
+
   <script type="module" src="./portfolio-very-theme.js"></script>
   <script type="module" src="portfolio-screen.js"></script>
   <script type="module" src="portfolio-bar.js"></script>
+  <script type="module" src="portfolio-card.js"></script>
+  <script type="module" src="portfolio-very-scroll.js"></script>
+
 
 </body>
 </html>
